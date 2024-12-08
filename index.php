@@ -12,7 +12,7 @@ require_once 'src/controllers/versionController.php';
       <title>Package Management System</title>
       <link rel="stylesheet" href="src\output.css">
     </head>
-    <body class="bg-gray-50">
+    <body class="bg-gray-50 h-full">
       <div class="container mx-auto">
         <!-- Welcome Section -->
         <div class="text-center py-8 bg-blue-50">
