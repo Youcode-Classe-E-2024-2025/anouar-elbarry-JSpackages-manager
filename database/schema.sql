@@ -24,3 +24,10 @@ CREATE TABLE versions (
     package_id INT,
     FOREIGN KEY (package_id) REFERENCES packages(id)
 );
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('admin', 'user', 'author') NOT NULL
+);
