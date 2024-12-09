@@ -28,6 +28,9 @@ echo "Connected successfully";
 <?php 
 $sql = "SELECT * FROM auteurs";
 $result = $connection->query($sql);
+if(!$result){
+     die("Invalid query:" .$connection->error);
+}
 
 ?>
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
