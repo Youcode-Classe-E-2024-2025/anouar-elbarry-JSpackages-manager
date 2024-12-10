@@ -137,24 +137,24 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
    </div>
 </aside>
 
-<div class="p-4 h-screen sm:ml-64 ">
+<div class="controll_cards p-4 h-screen sm:ml-64 ">
     <!-- Navigation Cards -->
     <div class="grid grid-cols-1 gap-14  px-4 py-10 h-full">
-          <a href="#" class="card p-6 text-center bg-white rounded shadow hover:shadow-lg self-center min-h-fit">
+          <a href="#" id="authors" class="card p-6 text-center bg-white rounded shadow hover:shadow-lg self-center min-h-fit">
             <h2 class="text-2xl font-semibold text-blue-600">Authors</h2>
             <p class="mb-3 text-gray-500 dark:text-gray-400">Manage and Organize Authors</p>
           </a>
-          <a href="#" class="card p-6 text-center bg-white rounded shadow hover:shadow-lg self-center min-h-fit">
+          <a href="#" id="packages" class="card p-6 text-center bg-white rounded shadow hover:shadow-lg self-center min-h-fit">
             <h2 class="text-2xl font-semibold text-blue-600">Packages</h2>
             <p class="mb-3 text-gray-500 dark:text-gray-400">Explore and Customize Packages</p>
           </a>
-          <a href="#" class="card p-6 text-center bg-white rounded shadow hover:shadow-lg self-center min-h-fit">
+          <a href="#" id="versions" class="card p-6 text-center bg-white rounded shadow hover:shadow-lg self-center min-h-fit">
             <h2 class="text-2xl font-semibold text-blue-600">Versions</h2>
             <p class="mb-3 text-gray-500 dark:text-gray-400">Track and Control Package Versions</p>
           </a>
         </div>
 </div>
-<div class="h-screen sm:ml-64 overflow-x-auto shadow-md sm:rounded-lg">
+<div class="hidden mt-14 authors_table h-screen sm:ml-64 overflow-x-auto shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -211,5 +211,19 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             </tbody>
         </table>
     </div>
+
+    <script>
+      const versions = document.getElementById('versions');
+      const packages = document.getElementById('packages');
+      const authors = document.getElementById('authors');
+
+      const authorsTable = document.querySelector('.authors_table');
+      const controllCards = document.querySelector('.controll_cards');
+
+      authors.addEventListener('click',()=> {
+             authorsTable.classList.toggle('hidden');
+             controllCards.classList.toggle('hidden');
+      })
+    </script>
 </body>
 </html>
