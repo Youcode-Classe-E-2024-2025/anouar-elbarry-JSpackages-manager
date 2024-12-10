@@ -343,6 +343,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
       const authorsTable = document.querySelector('.authors_table');
       const packagesTable = document.querySelector('.packages_table');
+      const versionsTable = document.querySelector('.versions_table');
       const controllCards = document.querySelector('.controll_cards');
 
       authors.addEventListener('click',()=> {
@@ -351,6 +352,10 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       })
       packages.addEventListener('click',()=> {
              packagesTable.classList.toggle('hidden');
+             controllCards.classList.toggle('hidden');
+      })
+      versions.addEventListener('click',()=> {
+             versionsTable.classList.toggle('hidden');
              controllCards.classList.toggle('hidden');
       })
     </script>
