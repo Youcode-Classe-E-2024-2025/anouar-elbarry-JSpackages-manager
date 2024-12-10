@@ -12,7 +12,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'author') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src\output.css">
-    <title>Admin Dashboard</title>
+    <title>author Dashboard</title>
 </head>
 <body>
 
