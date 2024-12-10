@@ -12,7 +12,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'author') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src\output.css">
-    <title>author Dashboard</title>
+    <title>Admin Dashboard</title>
 </head>
 <body>
 
@@ -28,7 +28,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'author') {
          </button>
         <a href="https://flowbite.com" class="flex ms-2 md:me-24">
          
-          <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">author Dashboard</span>
+          <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Admin Dashboard</span>
         </a>
       </div>
       <div class="flex items-center">
@@ -99,6 +99,10 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'author') {
 <div class="controll_cards p-4 h-screen sm:ml-64 ">
     <!-- Navigation Cards -->
     <div class="grid grid-cols-1 gap-14  px-4 py-10 h-full">
+          <a href="#" id="authors" class="card p-6 text-center bg-white rounded shadow hover:shadow-lg self-center min-h-fit">
+            <h2 class="text-2xl font-semibold text-blue-600">Authors</h2>
+            <p class="mb-3 text-gray-500 dark:text-gray-400">Manage and Organize Authors</p>
+          </a>
           <a href="#" id="packages" class="card p-6 text-center bg-white rounded shadow hover:shadow-lg self-center min-h-fit">
             <h2 class="text-2xl font-semibold text-blue-600">Packages</h2>
             <p class="mb-3 text-gray-500 dark:text-gray-400">Explore and Customize Packages</p>
@@ -109,7 +113,67 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'author') {
           </a>
         </div>
 </div>
+<!-- Authors table -->
+<div class="hidden mt-14 authors_table h-screen sm:ml-64 overflow-x-auto shadow-md sm:rounded-lg">
+   
+ <h2 class="text-5xl font-bold ml-4 mb-5 dark:text-white">Authors Table</h2>
 
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        ID
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Email
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Bio
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        <span class="sr-only">Edit</span>
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        <span class="sr-only">Delet</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $sql = "SELECT * FROM auteurs";
+                $result = $conn->query($sql);
+                if (!$result) {
+                    die("Invalid query:" . $conn->error);
+                }
+
+                //read data of each row
+                while ($row = $result->fetch_assoc()) {
+                    echo "
+                     <tr
+                    class='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'>
+                    <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+                        $row[id]
+                    </th>
+                    <td class='px-6 py-4'>
+                      
+                        $row[email]
+                    </td>
+                    <td class='px-6 py-4'>
+                        $row[name]
+                    </td>
+                    <td class='px-6 py-4'>
+                        $row[bio]
+                    </td>
+                </tr>
+                    ";
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
 <!-- Packages table -->
 <div class="hidden mt-14 packages_table h-screen sm:ml-64 overflow-x-auto shadow-md sm:rounded-lg">
 <h2 class="text-5xl font-bold ml-4 mb-5 dark:text-white">Packages Table</h2>
@@ -248,15 +312,22 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'author') {
     <script>
       const versions = document.getElementById('versions');
       const packages = document.getElementById('packages');
+      const authors = document.getElementById('authors');
 
       const addPackage = document.getElementById('addPackage');
+      const addAuthor = document.getElementById('addAuthor');
       const addVersion = document.getElementById('addVersion');
 
+      const authorsTable = document.querySelector('.authors_table');
       const packagesTable = document.querySelector('.packages_table');
       const versionsTable = document.querySelector('.versions_table');
       const controllCards = document.querySelector('.controll_cards');
 
-
+      authors.addEventListener('click',()=> {
+             authorsTable.classList.toggle('hidden');
+             controllCards.classList.toggle('hidden');
+             addAuthor.classList.toggle('hidden');
+      })
       packages.addEventListener('click',()=> {
              packagesTable.classList.toggle('hidden');
              controllCards.classList.toggle('hidden');
