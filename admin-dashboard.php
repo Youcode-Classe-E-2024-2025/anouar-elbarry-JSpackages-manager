@@ -156,6 +156,9 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 </div>
 <!-- Authors table -->
 <div class="hidden mt-14 authors_table h-screen sm:ml-64 overflow-x-auto shadow-md sm:rounded-lg">
+   
+ <h2 class="text-5xl font-bold ml-4 mb-5 dark:text-white">Authors Table</h2>
+
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -202,8 +205,11 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                     <td class='px-6 py-4'>
                         $row[bio]
                     </td>
-                    <td class='px-6 py-4 text-right'>
+                                   <td class='px-2 py-4 text-right'>
                         <a href='#' class='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Edit</a>
+                    </td>
+                    <td class='px-2 py-4 text-right'>
+                        <a href='#' class='font-medium text-red-600 dark:text-red-500 hover:underline'>delet</a>
                     </td>
                 </tr>
                     ";
@@ -214,6 +220,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     </div>
 <!-- Packages table -->
 <div class="hidden mt-14 packages_table h-screen sm:ml-64 overflow-x-auto shadow-md sm:rounded-lg">
+<h2 class="text-5xl font-bold ml-4 mb-5 dark:text-white">Packages Table</h2>
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -266,8 +273,11 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                     <td class='px-6 py-4'>
                         $row[auteurs_id]
                     </td>
-                    <td class='px-6 py-4 text-right'>
+                                  <td class='px-2 py-4 text-right'>
                         <a href='#' class='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Edit</a>
+                    </td>
+                    <td class='px-2 py-4 text-right'>
+                        <a href='#' class='font-medium text-red-600 dark:text-red-500 hover:underline'>delet</a>
                     </td>
                 </tr>
                     ";
@@ -278,6 +288,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     </div>
 <!-- Versions table -->
 <div class="hidden mt-14 versions_table h-screen sm:ml-64 overflow-x-auto shadow-md sm:rounded-lg">
+<h2 class="text-5xl font-bold ml-4 mb-5 dark:text-white">Versions Table</h2>
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -295,6 +306,9 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                     </th>
                     <th scope="col" class="px-6 py-3">
                         <span class="sr-only">Edit</span>
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        <span class="sr-only">delet</span>
                     </th>
                 </tr>
             </thead>
@@ -324,8 +338,11 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                     <td class='px-6 py-4'>
                         $row[package_id]
                     </td>
-                    <td class='px-6 py-4 text-right'>
+                    <td class='px-2 py-4 text-right'>
                         <a href='#' class='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Edit</a>
+                    </td>
+                    <td class='px-2 py-4 text-right'>
+                        <a href='#' class='font-medium text-red-600 dark:text-red-500 hover:underline'>delet</a>
                     </td>
                 </tr>
                     ";
