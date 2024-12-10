@@ -326,6 +326,10 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       const packages = document.getElementById('packages');
       const authors = document.getElementById('authors');
 
+      const addPackage = document.getElementById('addPackage');
+      const addAuthor = document.getElementById('addAuthor');
+      const addVersion = document.getElementById('addVersion');
+
       const authorsTable = document.querySelector('.authors_table');
       const packagesTable = document.querySelector('.packages_table');
       const versionsTable = document.querySelector('.versions_table');
@@ -334,14 +338,17 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       authors.addEventListener('click',()=> {
              authorsTable.classList.toggle('hidden');
              controllCards.classList.toggle('hidden');
+             addAuthor.classList.toggle('hidden');
       })
       packages.addEventListener('click',()=> {
              packagesTable.classList.toggle('hidden');
              controllCards.classList.toggle('hidden');
+             addPackage.classList.toggle('hidden');
       })
       versions.addEventListener('click',()=> {
              versionsTable.classList.toggle('hidden');
              controllCards.classList.toggle('hidden');
+             addVersion.classList.toggle('hidden');
       })
     </script>
 </body>
