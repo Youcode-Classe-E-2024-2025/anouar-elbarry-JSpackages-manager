@@ -65,7 +65,7 @@ require_once 'src/controllers/versionController.php';
                   </div>
                   <button type="submit" class="w-full text-black bg-blue-600 border hover:bg-blue-950 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
                   <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                      click <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">here</a> to return back 
+                      click <a href="index.php" class="font-medium text-primary-600 hover:underline dark:text-primary-500">here</a> to return back 
                   </p>
               </form>
           </div>
@@ -77,7 +77,6 @@ require_once 'src/controllers/versionController.php';
   const modal =document.getElementById("modal");
   cards.forEach(card => {
         card.addEventListener('click',()=>{
-          console.log("hhhhhh");
           
           modal.classList.toggle('hidden');
           modal.classList.toggle('absolute');
