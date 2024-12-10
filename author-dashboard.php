@@ -28,7 +28,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'author') {
          </button>
         <a href="https://flowbite.com" class="flex ms-2 md:me-24">
          
-          <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Admin Dashboard</span>
+          <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">author Dashboard</span>
         </a>
       </div>
       <div class="flex items-center">
