@@ -7,7 +7,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     exit;
 }
 ?>
-<div class="hidden mt-14 Addpackage-modal h-screen sm:ml-64 overflow-x-auto shadow-md sm:rounded-lg px-8">
+<div class="hidden mt-14 Addversion-modal h-screen sm:ml-64 overflow-x-auto shadow-md sm:rounded-lg px-8">
         <h2 class="text-2xl font-bold mb-4">version Information</h2>
         <form action="/submit_author" method="POST">
             <div class="mb-4">
