@@ -240,7 +240,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                         $row[package_name]
                     </td>
                     <td class='px-6 py-4'>
-                        $row[description]
+                        $row[pack_description]
                     </td>
                     <td class='px-6 py-4'>
                         $row[created_at]
