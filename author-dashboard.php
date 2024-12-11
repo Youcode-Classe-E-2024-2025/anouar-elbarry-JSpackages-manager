@@ -325,6 +325,9 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'author') {
       const versionsTable = document.querySelector('.versions_table');
       const controllCards = document.querySelector('.controll_cards');
 
+      const packageModal = document.querySelector('.Addpackage-modal');
+      const versionModal = document.querySelector('.Addversion-modal');
+
       authors.addEventListener('click',()=> {
              authorsTable.classList.toggle('hidden');
              controllCards.classList.toggle('hidden');
@@ -339,6 +342,16 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'author') {
              versionsTable.classList.toggle('hidden');
              controllCards.classList.toggle('hidden');
              addVersion.classList.toggle('hidden');
+      })
+      addPackage.addEventListener('click',()=> {
+             packageModal.classList.toggle('hidden');
+             packagesTable.classList.add('hidden');
+             controllCards.classList.add('hidden');
+      })
+      addVersion.addEventListener('click',()=> {
+             versionModal.classList.toggle('hidden');
+             versionsTable.classList.add('hidden');
+             controllCards.classList.add('hidden');
       })
     </script>
 </body>
