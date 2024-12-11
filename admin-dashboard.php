@@ -236,7 +236,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                     </th>
                     <td class='px-6 py-4'>
                       
-                        $row[name]
+                        $row[package_name]
                     </td>
                     <td class='px-6 py-4'>
                         $row[description]
