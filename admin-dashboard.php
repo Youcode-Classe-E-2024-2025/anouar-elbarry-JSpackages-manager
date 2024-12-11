@@ -344,6 +344,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
       const authorModal = document.querySelector('.addAuthor-modal');
       const packageModal = document.querySelector('.Addpackage-modal');
+      const versionModal = document.querySelector('.Addversion-modal');
 
       authors.addEventListener('click',()=> {
              authorsTable.classList.toggle('hidden');
@@ -368,6 +369,11 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       addPackage.addEventListener('click',()=> {
              packageModal.classList.toggle('hidden');
              packagesTable.classList.add('hidden');
+             controllCards.classList.add('hidden');
+      })
+      addVersion.addEventListener('click',()=> {
+             versionModal.classList.toggle('hidden');
+             versionsTable.classList.add('hidden');
              controllCards.classList.add('hidden');
       })
     </script>
