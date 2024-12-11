@@ -146,6 +146,9 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                     <th scope="col" class="px-6 py-3">
                         <span class="sr-only">Edit</span>
                     </th>
+                    <th scope="col" class="px-6 py-3">
+                        <span class="sr-only">Delet</span>
+                    </th>
                 </tr>
             </thead>
             <tbody>
