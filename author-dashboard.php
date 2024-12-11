@@ -1,8 +1,8 @@
 <?php
 require_once 'database/config.php';
-require_once 'src\models\Package.php';
-require_once 'src\models\version.php';
-
+// require_once 'src\models\Package.php';
+// require_once 'src\models\version.php';
+session_start();
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'author') {
     header('Location: index.php');
     exit;
@@ -164,7 +164,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'author') {
                         $row[email]
                     </td>
                     <td class='px-6 py-4'>
-                        $row[name]
+                        $row[Author_name]
                     </td>
                     <td class='px-6 py-4'>
                         $row[bio]
@@ -220,7 +220,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'author') {
                     </th>
                     <td class='px-6 py-4'>
                       
-                        $row[name]
+                        $row[package_name]
                     </td>
                     <td class='px-6 py-4'>
                         $row[description]
@@ -317,7 +317,6 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'author') {
       const authors = document.getElementById('authors');
 
       const addPackage = document.getElementById('addPackage');
-      const addAuthor = document.getElementById('addAuthor');
       const addVersion = document.getElementById('addVersion');
 
       const authorsTable = document.querySelector('.authors_table');
