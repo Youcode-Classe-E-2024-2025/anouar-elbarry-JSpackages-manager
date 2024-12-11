@@ -321,58 +321,29 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         </table>
     </div>
 
-    <div class="addAuthor-modal  absolute z-10  h-full w-full  justify-center items-center overflow-y-auto hidden">
+    <div class="hidden mt-14 addAuthor-modal h-screen sm:ml-64 overflow-x-auto shadow-md sm:rounded-lg px-8">
+        <h2 class="text-2xl font-bold mb-4">Author Information</h2>
+        <form action="/submit_author" method="POST">
+            <div class="mb-4">
+                <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
 
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
 
-<!-- global information Section -->
-<form id="AddAuthor_form" class="bg-cyan-950 w-3/6 h-4/5 overflow-y-auto rounded p-7">
-<div class="space-y-12">
+            <div class="mb-4">
+                <label for="bio" class="block text-gray-700 font-medium mb-2">Biography</label>
+                <textarea id="bio" name="bio" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
 
-<!-- Section Title and Description -->
-<div class="border-b border-gray-400/10 pb-12">
-<h2 class="text-lg font-semibold text-gray-400">Author form</h2>
-</div>
-
-<!-- Player Information Form -->
-<div class="mt-2 grid grid-cols-1 gap-x-3 gap-y-8 sm:grid-cols-6">
-
-<!-- Name Input -->
-<div class="sm:col-span-3">
-  <label for="Playername" class="block text-sm font-medium text-gray-400">Name</label>
-  <div class="mt-2 inputControl">
-    <input type="text"  name="name"
-      id="Playername"
-      class="block w-full rounded-md  shadow-sm "
-      >
-      <div class="error"></div>
-  </div>
-</div>
-
-<!-- Email Input -->
-<div class="sm:col-span-3 sm:row-start-1">
-  <label for="email" class="block text-sm font-medium text-gray-400">Email</label>
-  <div class="mt-2 inputControl">
-    <input type="email" name="email" id="email"
-      class="block w-full rounded-md  shadow-sm "
-      >
-      <div class="error"></div>
-  </div>
-</div>
-
-<!-- bio Input -->
-<div class="sm:col-span-3 sm:row-start-2">
-  <label for="bio" class="block text-sm font-medium text-gray-400">Bio</label>
-  <div class="mt-2 inputControl">
-  <textarea name="bio" id="bio" class="block w-full rounded-md  shadow-sm ">
-
-  </textarea>
-      <div class="error"></div>
-  </div>
-</div>
-</div>  
-</div>
-</form>
-</div>      
+            <div class="flex justify-end">
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Submit</button>
+            </div>
+        </form>
+    </div>    
 <!-- script -->
     <script>
       const versions = document.getElementById('versions');
@@ -400,10 +371,10 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
              controllCards.classList.toggle('hidden');
              addPackage.classList.toggle('hidden');
       })
-      versions.addEventListener('click',()=> {
-             versionsTable.classList.toggle('hidden');
-             controllCards.classList.toggle('hidden');
-             addVersion.classList.toggle('hidden');
+      addAuthor.addEventListener('click',()=> {
+             authorModal.classList.toggle('hidden');
+             authorsTable.classList.add('hidden');
+             controllCards.classList.add('hidden');
       })
     </script>
 </body>
