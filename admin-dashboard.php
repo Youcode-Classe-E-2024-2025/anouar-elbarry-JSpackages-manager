@@ -157,7 +157,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             <tbody>
                 <?php
                 $sql = "SELECT * FROM auteurs";
-                $result = $conn->query($sql);
+                $result = $conn->query(query: $sql);
                 if (!$result) {
                     die("Invalid query:" . $conn->error);
                 }
