@@ -1,5 +1,7 @@
 <?php
 require_once 'database/config.php';
+require_once 'src\models\Package.php';
+require_once 'src\models\version.php';
 session_start();
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'author') {
     header('Location: index.php');
