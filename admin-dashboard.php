@@ -371,6 +371,11 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
              controllCards.classList.toggle('hidden');
              addPackage.classList.toggle('hidden');
       })
+      versions.addEventListener('click',()=> {
+             versionsTable.classList.toggle('hidden');
+             controllCards.classList.toggle('hidden');
+             addVersion.classList.toggle('hidden');
+      })
       addAuthor.addEventListener('click',()=> {
              authorModal.classList.toggle('hidden');
              authorsTable.classList.add('hidden');
