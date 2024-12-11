@@ -27,7 +27,8 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
             <div class="mb-4">
                 <label for="Authorname" class="block text-gray-700 font-medium mb-2">Authors name</label>
-                <select name="Authorname" id="Authorname">
+                <select name="Authorname" id="Authorname"  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <option value="choose an Author" selected>choose an Author</option>
                     <?php
                 $sql = "SELECT Author_name FROM auteurs";
                 $result = $conn->query($sql);
@@ -37,7 +38,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                 //read data of each row
                 while ($option = $result->fetch_assoc()) {
                     echo "
-                   <option id='$option[Author_name]' class='w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500' required>$option[Author_name]</option>
+                   <option id='$option[Author_name]'>$option[Author_name]</option>
                     ";
                 }
                 ?>
