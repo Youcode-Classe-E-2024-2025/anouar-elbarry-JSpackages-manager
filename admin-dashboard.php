@@ -366,7 +366,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       })
       addPackage.addEventListener('click',()=> {
              packageModal.classList.toggle('hidden');
-             authorsTable.classList.add('hidden');
+             packagesTable.classList.add('hidden');
              controllCards.classList.add('hidden');
       })
     </script>
