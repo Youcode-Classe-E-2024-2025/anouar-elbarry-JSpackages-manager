@@ -11,34 +11,40 @@ require_once 'process-login.php';
     <title>Login</title>
 </head>
 <body class="h-screen flex flex-col justify-between">
-<div class="container mx-auto h-full ">
+<div class="container mx-auto h-full " >
         <!-- Welcome Section -->
-        <div class="text-center py-8 bg-blue-50">
-          <h1 class="text-4xl font-bold text-blue-700">Welcome to the Package Management System</h1>
-          <p class="mt-2 text-lg text-gray-600">Please select your roll.</p>
+        <div class="text-center py-8 bg-gray-100">
+          <h1 class="text-4xl font-bold text-black">Welcome to the <span class="text-orange-600">Pack Man</span>   System</h1>
+          <p class="mt-2 text-lg text-gray-600">Please select your role.</p>
         </div>
 
         <!-- Navigation Cards -->
         <div class="grid grid-cols-1 gap-4 px-4 py-8 md:grid-cols-3 md:h-1/2">
-          <a href="#" class="card p-6 text-center bg-white rounded shadow hover:shadow-lg self-center min-h-fit h-1/2">
-            <h2 class="text-2xl font-semibold text-blue-600">Author</h2>
+          <a href="#" class="card p-1 text-center rounded-md bg-gradient-to-tr from-orange-600 to-red-600 shadow hover:shadow-xl self-center min-h-fit h-1/2">
+          <div class="w-full h-full rounded-md bg-white flex items-center justify-center">
+          <h2 class="text-2xl font-bold text-transparent bg-gradient-to-tr from-orange-600 to-red-600 bg-clip-text">Author</h2>
+          </div>
           </a>
-          <a href="#" class="card p-6 text-center bg-white rounded shadow hover:shadow-lg self-center min-h-fit h-1/2">
-            <h2 class="text-2xl font-semibold text-blue-600">Admin</h2>
+          <a href="#" class="card p-1 text-center rounded-md bg-gradient-to-tr from-red-600 to-gray-600  shadow hover:shadow-xl self-center min-h-fit h-1/2">
+          <div class="w-full h-full rounded-md bg-white flex items-center justify-center">
+          <h2 class="text-2xl font-bold text-transparent bg-gradient-to-tr from-red-600 to-gray-600 bg-clip-text">Admin</h2>
+          </div>
           </a>
-          <a href="#" class="card p-6 text-center bg-white rounded shadow hover:shadow-lg self-center min-h-fit h-1/2">
-            <h2 class="text-2xl font-semibold text-blue-600">User</h2>
+          <a href="#" class="card p-1 text-center rounded-md bg-gradient-to-tr from-orange-600 to-red-600 shadow hover:shadow-xl self-center min-h-fit h-1/2">
+          <div class="w-full h-full rounded-md bg-white flex items-center justify-center">
+          <h2 class="text-2xl font-bold text-transparent bg-gradient-to-tr from-orange-600 to-red-600 bg-clip-text">User</h2>
+          </div>
           </a>
         </div>
       </div>
-      <section id="modal" class="bg-gray-50 dark:bg-gray-900 hidden left-0 top-0 h-screen w-full">
+      <section id="modal" style="background-image: url('src/imges/signIn.jpg'); background-position:center; background-size: cover;" class=" hidden left-0 top-0 h-screen w-full">
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-      <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-          Access to your dashboard    
+      <a href="#" class="flex items-center mb-6 text-4xl font-bold text-gray-900 dark:text-white">
+          Access to your Dashboard    
       </a>
-      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+      <div class="w-full bg-transparent shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-lg  dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+              <h1 class="text-xl font-bold leading-tight tracking-tight text-transparent bg-gradient-to-tr from-black to-blue-600 bg-clip-text md:text-2xl dark:text-white">
                   Sign in to your account
               </h1>
               <form class="space-y-4 md:space-y-6" action="process-login.php" method="POST">
@@ -56,14 +62,13 @@ require_once 'process-login.php';
                             <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
                           </div>
                           <div class="ml-3 text-sm">
-                            <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
+                            <label for="remember" class="text-white dark:text-gray-300">Remember me</label>
                           </div>
                       </div>
-                      <a href="#" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
                   </div>
-                  <button type="submit" class="w-full text-black bg-blue-600 border hover:bg-blue-950 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
-                  <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                      click <a href="index.php" class="font-medium text-primary-600 hover:underline dark:text-primary-500">here</a> to return back 
+                  <button type="submit" class="w-full text-white bg-gradient-to-tr from-blue-600 to-gray-600  border hover:bg-gradient-to-tr hover:from-red-600 hover:to-gray-600  font-bold rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
+                  <p class="text-sm font-light text-white dark:text-gray-400">
+                      click <a href="index.php" class="font-medium text-black hover:underline ">here</a> to return back 
                   </p>
               </form>
           </div>
@@ -81,7 +86,7 @@ require_once 'process-login.php';
         })
   })
 </script>
-      <footer class="py-4 bg-gray-800 text-gray-400">
+      <footer class="py-4 bg-gradient-to-tr from-red-600 to-gray-600  text-white">
         <p class="text-center">© 2024 Package Management System. All Rights Reserved.</p>
       </footer>
 </body>
