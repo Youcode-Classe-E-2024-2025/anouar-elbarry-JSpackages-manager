@@ -298,6 +298,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                 <?php
            $sql = "
            SELECT 
+               versions.id,
                versions.version_number,
                versions.release_date,
                packages.package_name
@@ -329,7 +330,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                         <a href='#' class='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Edit</a>
                     </td>
                     <td class='px-2 py-4 text-right'>
-                        <a href='src\controllers\versionController.php?id=" . $row['id'] . "' class='font-medium text-red-600 dark:text-red-500 hover:underline'>delet</a>
+                        <a href='./src/controllers/versionController.php?id=" . $row['id'] . "' class='font-medium text-red-600 dark:text-red-500 hover:underline'>delet</a>
                     </td>
                 </tr>
                     ";
