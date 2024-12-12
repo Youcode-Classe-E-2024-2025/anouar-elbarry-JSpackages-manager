@@ -4,7 +4,6 @@ require_once 'database/config.php';
 require_once 'src\models\Package.php';
 require_once 'src\models\version.php';
 
-
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     header('Location: index.php');
     exit;
@@ -184,7 +183,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                         <a href='#' class='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Edit</a>
                     </td>
                     <td class='px-2 py-4 text-right'>
-                        <a href='#' class='font-medium text-red-600 dark:text-red-500 hover:underline'>delet</a>
+                        <a href='src\controllers\authorController.php?id=" . $row['id'] . "'  class='font-medium text-red-600 dark:text-red-500 hover:underline'>delet</a>
                     </td>
                 </tr>
                     ";
