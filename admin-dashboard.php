@@ -268,9 +268,6 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
-                     ID
-                    </th>
-                    <th scope="col" class="px-6 py-3">
                      Version_number
                     </th>
                     <th scope="col" class="px-6 py-3">
@@ -289,22 +286,27 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             </thead>
             <tbody>
                 <?php
-                $sql = "SELECT * FROM versions";
-                $result = $conn->query($sql);
+           $sql = "
+           SELECT 
+               versions.version_number,
+               versions.release_date,
+               packages.package_name
+           FROM 
+               versions
+           INNER JOIN 
+               packages ON versions.package_id = packages.id
+       ";
+       $result = $conn->query($sql);
+       
                 if (!$result) {
                     die("Invalid query:" . $conn->error);
                 }
-
                 //read data of each row
                 while ($row = $result->fetch_assoc()) {
                     echo "
                      <tr
                     class='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'>
-                    <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
-                        $row[id]
-                    </th>
                     <td class='px-6 py-4'>
-                      
                         $row[version_number]
                     </td>
                     <td class='px-6 py-4'>
