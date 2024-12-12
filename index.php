@@ -1,8 +1,6 @@
 <?php
 require_once 'database/config.php';
 require_once 'process-login.php';
-require_once 'src/controllers/packageController.php';
-require_once 'src/controllers/versionController.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
