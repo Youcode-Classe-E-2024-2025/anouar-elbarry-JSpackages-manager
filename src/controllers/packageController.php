@@ -1,5 +1,5 @@
 <?php 
-require_once './../../database/config.php';
+// require_once './../../database/config.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve form data
     $name = $_POST['name'];
