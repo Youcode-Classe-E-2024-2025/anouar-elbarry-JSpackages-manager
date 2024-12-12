@@ -1,20 +1,26 @@
 <?php 
 session_start();
 require_once './../../database/config.php';
+
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']); 
 
-    
-    $stmt = $conn->prepare("DELETE FROM `auteurs` WHERE `id` = ?");
-    $stmt->bind_param("i", $id);
+    try {
+        // Delete the author (with cascading effect configured in database schema)
+        $stmt = $conn->prepare("DELETE FROM `auteurs` WHERE `id` = ?");
+        $stmt->bind_param("i", $id);
 
-    if ($stmt->execute()) {
-        echo "Record deleted successfully.";
-    } else {
-        echo "Failed to delete record: " . $conn->error;
+        if ($stmt->execute()) {
+            echo "Author, their packages, and versions have been deleted successfully.";
+        } else {
+            echo "Failed to delete author: " . $conn->error;
+        }
+        
+        $stmt->close();
+
+    } catch (mysqli_sql_exception $e) {
+        echo "Database error: " . $e->getMessage();
     }
-
-    $stmt->close();
 }
 
 
