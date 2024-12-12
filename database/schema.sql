@@ -43,3 +43,11 @@ INSERT INTO versions (version_number, release_date, package_id) VALUES
 ('3.3.3', '2023-04-15', 4),  -- Tailwind CSS
 ('26.6.3', '2020-09-01', 1), -- Jest
 ('27.5.1', '2022-01-10', 1); -- Jest
+
+-- Ensure Foreign Key Constraints with Cascading Delete
+
+ALTER TABLE `packages`
+ADD CONSTRAINT `packages_ibfk_1` FOREIGN KEY (`auteurs_id`) REFERENCES `auteurs`(`id`) ON DELETE CASCADE;
+
+ALTER TABLE `versions`
+ADD CONSTRAINT `versions_ibfk_1` FOREIGN KEY (`package_id`) REFERENCES `packages`(`id`) ON DELETE CASCADE;
