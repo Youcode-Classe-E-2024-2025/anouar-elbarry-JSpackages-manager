@@ -298,6 +298,11 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'user') {
              versionsTable.classList.toggle('hidden');
              controllCards.classList.toggle('hidden');
       })
+      menu.addEventListener('click',()=> {
+        console.log("hhbd");
+        sidebar.classList.toggle('sm:translate-x-0');
+        sidebar.classList.toggle('-translate-x-full');
+      })
     </script>
 </body>
 </html>
