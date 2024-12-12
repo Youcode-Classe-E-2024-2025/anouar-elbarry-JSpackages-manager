@@ -1,6 +1,23 @@
 <?php 
 session_start();
 require_once './../../database/config.php';
+if (isset($_GET['id'])) {
+    $id = intval($_GET['id']); 
+
+    
+    $stmt = $conn->prepare("DELETE FROM `auteurs` WHERE `id` = ?");
+    $stmt->bind_param("i", $id);
+
+    if ($stmt->execute()) {
+        echo "Record deleted successfully.";
+    } else {
+        echo "Failed to delete record: " . $conn->error;
+    }
+
+    $stmt->close();
+}
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve form data
     $name = $_POST['name'];
