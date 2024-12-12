@@ -227,16 +227,13 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'user') {
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
-                     ID
+                     Version number
                     </th>
                     <th scope="col" class="px-6 py-3">
-                     Version_number
+                    Release date
                     </th>
                     <th scope="col" class="px-6 py-3">
-                     Release_date
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                     Package_id
+                    Package Name
                     </th>
                 </tr>
             </thead>
