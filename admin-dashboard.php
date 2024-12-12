@@ -19,7 +19,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 </head>
 <body>
 
-<nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+<nav class="fixed top-0 z-50 w-full bg-black border-b border-gray-600">
   <div class="px-3 py-3 lg:px-5 lg:pl-3">
     <div class="flex items-center justify-between">
       <div  class="flex items-center justify-start rtl:justify-end">
@@ -31,7 +31,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
          </button>
         <a href="#" class="flex ms-2 md:me-24">
          
-          <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Admin Dashboard</span>
+          <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-white">Admin Dashboard</span>
         </a>
       </div>
       <div class="flex items-center">
