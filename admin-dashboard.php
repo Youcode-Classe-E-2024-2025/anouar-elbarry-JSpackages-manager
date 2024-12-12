@@ -212,7 +212,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                         Created At
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Authors_Id
+                    Author name
                     </th>
                     <th scope="col" class="px-6 py-3">
                         <span class="sr-only">Edit</span>
@@ -221,7 +221,18 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             </thead>
             <tbody>
                 <?php
-                $sql = "SELECT * FROM packages";
+                 $sql = "
+                 SELECT 
+                     packages.id,
+                     packages.package_name,
+                     packages.pack_description,
+                     packages.created_at,
+                     auteurs.Author_name
+                 FROM 
+                     packages
+                 INNER JOIN 
+                     auteurs ON packages.auteurs_id = auteurs.id
+             ";
                 $result = $conn->query($sql);
                 if (!$result) {
                     die("Invalid query:" . $conn->error);
@@ -246,7 +257,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                         $row[created_at]
                     </td>
                     <td class='px-6 py-4'>
-                        $row[auteurs_id]
+                        $row[Author_name]
                     </td>
                                   <td class='px-2 py-4 text-right'>
                         <a href='#' class='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Edit</a>
