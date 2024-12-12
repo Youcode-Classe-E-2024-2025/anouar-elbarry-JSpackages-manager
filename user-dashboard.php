@@ -213,12 +213,6 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'user') {
                     <td class='px-6 py-4'>
                         $row[Author_name]
                     </td>
-                                  <td class='px-2 py-4 text-right'>
-                        <a href='#' class='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Edit</a>
-                    </td>
-                    <td class='px-2 py-4 text-right'>
-                        <a href='#' class='font-medium text-red-600 dark:text-red-500 hover:underline'>delet</a>
-                    </td>
                 </tr>
                     ";
                 }
@@ -247,30 +241,35 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'user') {
                 </tr>
             </thead>
             <tbody>
-                <?php
-                $sql = "SELECT * FROM versions";
-                $result = $conn->query($sql);
+            <?php
+           $sql = "
+           SELECT 
+               versions.version_number,
+               versions.release_date,
+               packages.package_name
+           FROM 
+               versions
+           INNER JOIN 
+               packages ON versions.package_id = packages.id
+       ";
+       $result = $conn->query($sql);
+       
                 if (!$result) {
                     die("Invalid query:" . $conn->error);
                 }
-
                 //read data of each row
                 while ($row = $result->fetch_assoc()) {
                     echo "
                      <tr
                     class='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'>
-                    <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
-                        $row[id]
-                    </th>
                     <td class='px-6 py-4'>
-                      
                         $row[version_number]
                     </td>
                     <td class='px-6 py-4'>
                         $row[release_date]
                     </td>
                     <td class='px-6 py-4'>
-                        $row[package_id]
+                        $row[package_name]
                     </td>
                 </tr>
                     ";
