@@ -20,19 +20,19 @@ require_once 'process-login.php';
 
         <!-- Navigation Cards -->
         <div class="grid grid-cols-1 gap-4 px-4 py-8 md:grid-cols-3 md:h-1/2">
-          <a href="#" class="card p-1 text-center rounded-md bg-gradient-to-tr from-orange-600 to-red-600 shadow hover:shadow-xl self-center min-h-fit h-1/2">
+          <a href="#" class="card p-1 text-center rounded-md bg-gradient-to-tr from-orange-600 to-red-600 shadow hover:shadow-xl self-center min-h-fit ">
           <div class="w-full h-full rounded-md bg-white flex items-center justify-center">
-          <h2 class="text-2xl font-bold text-transparent bg-gradient-to-tr from-orange-600 to-red-600 bg-clip-text">Author</h2>
+          <h2 class="text-2xl font-bold text-transparent bg-gradient-to-tr from-orange-600 to-red-600 bg-clip-text p-7">Author</h2>
           </div>
           </a>
-          <a href="#" class="card p-1 text-center rounded-md bg-gradient-to-tr from-red-600 to-gray-600  shadow hover:shadow-xl self-center min-h-fit h-1/2">
+          <a href="#" class="card p-1 text-center rounded-md bg-gradient-to-tr from-red-600 to-gray-600  shadow hover:shadow-xl self-center min-h-fit ">
           <div class="w-full h-full rounded-md bg-white flex items-center justify-center">
-          <h2 class="text-2xl font-bold text-transparent bg-gradient-to-tr from-red-600 to-gray-600 bg-clip-text">Admin</h2>
+          <h2 class="text-2xl font-bold text-transparent bg-gradient-to-tr from-red-600 to-gray-600 bg-clip-text p-7">Admin</h2>
           </div>
           </a>
-          <a href="#" class="card p-1 text-center rounded-md bg-gradient-to-tr from-orange-600 to-red-600 shadow hover:shadow-xl self-center min-h-fit h-1/2">
+          <a href="#" class="card p-1 text-center rounded-md bg-gradient-to-tr from-orange-600 to-red-600 shadow hover:shadow-xl self-center min-h-fit ">
           <div class="w-full h-full rounded-md bg-white flex items-center justify-center">
-          <h2 class="text-2xl font-bold text-transparent bg-gradient-to-tr from-orange-600 to-red-600 bg-clip-text">User</h2>
+          <h2 class="text-2xl font-bold text-transparent bg-gradient-to-tr from-orange-600 to-red-600 bg-clip-text p-7">User</h2>
           </div>
           </a>
         </div>
