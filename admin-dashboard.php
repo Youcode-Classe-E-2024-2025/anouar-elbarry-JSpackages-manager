@@ -268,13 +268,13 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
-                     Version_number
+                     Version number
                     </th>
                     <th scope="col" class="px-6 py-3">
-                     Release_date
+                     Release date
                     </th>
                     <th scope="col" class="px-6 py-3">
-                     Package_id
+                     Package Name
                     </th>
                     <th scope="col" class="px-6 py-3">
                         <span class="sr-only">Edit</span>
@@ -313,7 +313,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                         $row[release_date]
                     </td>
                     <td class='px-6 py-4'>
-                        $row[package_id]
+                        $row[package_name]
                     </td>
                     <td class='px-2 py-4 text-right'>
                         <a href='#' class='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Edit</a>
