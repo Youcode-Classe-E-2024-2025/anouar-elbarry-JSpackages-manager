@@ -138,7 +138,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'user') {
                         $row[email]
                     </td>
                     <td class='px-6 py-4'>
-                        $row[name]
+                        $row[Author_name]
                     </td>
                     <td class='px-6 py-4'>
                         $row[bio]
@@ -169,13 +169,24 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'user') {
                         Created At
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Authors_Id
+                    Author name
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <?php
-                $sql = "SELECT * FROM packages";
+            <?php
+                 $sql = "
+                 SELECT 
+                     packages.id,
+                     packages.package_name,
+                     packages.pack_description,
+                     packages.created_at,
+                     auteurs.Author_name
+                 FROM 
+                     packages
+                 INNER JOIN 
+                     auteurs ON packages.auteurs_id = auteurs.id
+             ";
                 $result = $conn->query($sql);
                 if (!$result) {
                     die("Invalid query:" . $conn->error);
@@ -191,16 +202,22 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'user') {
                     </th>
                     <td class='px-6 py-4'>
                       
-                        $row[name]
+                        $row[package_name]
                     </td>
                     <td class='px-6 py-4'>
-                        $row[description]
+                        $row[pack_description]
                     </td>
                     <td class='px-6 py-4'>
                         $row[created_at]
                     </td>
                     <td class='px-6 py-4'>
-                        $row[auteurs_id]
+                        $row[Author_name]
+                    </td>
+                                  <td class='px-2 py-4 text-right'>
+                        <a href='#' class='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Edit</a>
+                    </td>
+                    <td class='px-2 py-4 text-right'>
+                        <a href='#' class='font-medium text-red-600 dark:text-red-500 hover:underline'>delet</a>
                     </td>
                 </tr>
                     ";
