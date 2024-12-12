@@ -14,6 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Insert data into the existing table
     $sql = "INSERT INTO auteurs (Author_name,email,bio) VALUES ('$name', '$email','$bio')";
+    if ($conn->query($sql) === TRUE) {
+        echo "Author added successfully!";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
 }
 
 ?>
