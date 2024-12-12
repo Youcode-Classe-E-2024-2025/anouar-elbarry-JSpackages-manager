@@ -13,6 +13,15 @@ This project manages information about JavaScript packages, including their desc
   - **Author Dashboard**: Limited access to add and edit only their own packages and versions.
   - **User Dashboard**: Read-only access to view package ,version information and their author.
 
+## Entity-Relationship Diagram (ERD)
+
+You can view the [ERD Diagram](https://lucid.app/lucidchart/28210475-58d1-46de-831b-da4f2fb3139a/edit?invitationId=inv_d6b2bbc3-c1f3-4f2e-bf83-131f60302290).
+
+## UML Use Case Diagram
+
+You can view the [UML Use Case Diagram](https://lucid.app/lucidchart/223b6849-8f9e-40a4-8fec-3d8e6bafddf5/edit?viewport_loc=-915%2C-911%2C3729%2C1628%2C0_0&invitationId=inv_a5de8098-12f5-4406-902a-512dd54a7f9b).
+
+
 ## Database Schema
 
 ### Table: `auteurs`
