@@ -25,13 +25,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         switch ($user['role']) {
             case 'admin':
-                header('Location: admin-dashboard.php');
+                header('Location: dashboards/admin-dashboard.php');
                 break;
             case 'author':
-                header('Location: author-dashboard.php');
+                header('Location: dashboards/author-dashboard.php');
                 break;
             case 'user':
-                header('Location: user-dashboard.php');
+                header('Location: dashboards/user-dashboard.php');
                 break;
         }
         exit;
