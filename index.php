@@ -8,7 +8,7 @@ require_once 'process-login.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src\output.css">
-    <title>Login</title>
+    <title>Pack Man</title>
 </head>
 <body class="h-screen flex flex-col justify-between">
 <div class="container mx-auto h-full " >
@@ -66,7 +66,7 @@ require_once 'process-login.php';
                           </div>
                       </div>
                   </div>
-                  <button type="submit" class="w-full text-white bg-gradient-to-tr from-blue-600 to-gray-600  border hover:bg-gradient-to-tr hover:from-red-600 hover:to-gray-600  font-bold rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
+                  <button type="submit" class="w-full text-white bg-gradient-to-tr from-orange-600 to-gray-600  border hover:bg-gradient-to-tr hover:from-red-600 hover:to-gray-600  font-bold rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
                   <p class="text-sm font-light text-white dark:text-gray-400">
                       click <a href="index.php" class="font-medium text-black hover:underline ">here</a> to return back 
                   </p>
@@ -87,7 +87,7 @@ require_once 'process-login.php';
   })
 </script>
       <footer class="py-4 bg-gradient-to-tr from-red-600 to-gray-600  text-white">
-        <p class="text-center">© 2024 Package Management System. All Rights Reserved.</p>
+        <p class="text-center">© 2024 Pack Man System. All Rights Reserved.</p>
       </footer>
 </body>
 </html>
