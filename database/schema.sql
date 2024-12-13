@@ -1,7 +1,7 @@
 -- Table: auteurs
 CREATE TABLE auteurs(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+    Author_name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     bio TEXT
 );
@@ -9,8 +9,8 @@ CREATE TABLE auteurs(
 -- Table: packages
 CREATE TABLE packages (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    description TEXT,
+    package_name VARCHAR(255) NOT NULL,
+    pack_description TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     auteurs_id INT,
     FOREIGN KEY (auteurs_id) REFERENCES auteurs(id)
@@ -35,7 +35,7 @@ CREATE TABLE users (
 
 
 -- Insert random data into the auteurs table
-INSERT INTO auteurs (name, email, bio)
+INSERT INTO auteurs (Author_name, email, bio)
 VALUES
 ('John Doe', 'john.doe@example.com', 'An experienced JavaScript developer specializing in open-source projects.'),
 ('Jane Smith', 'jane.smith@example.com', 'A passionate programmer focused on JavaScript frameworks and cloud solutions.'),
@@ -44,26 +44,26 @@ VALUES
 ('Charlie White', 'charlie.white@example.com', 'Node.js engineer ensuring smooth server-side performance.');
 
 -- Insert random data into the packages table
-INSERT INTO packages (name, description, auteurs_id)
+INSERT INTO packages (package_name, pack_description, auteurs_id)
 VALUES
-('JS Package Manager', 'A tool to manage and install JavaScript packages efficiently.', 1),
-('Data Visualizer', 'A JavaScript library for creating dynamic and interactive data visualizations.', 3),
-('Web Framework', 'A lightweight JavaScript framework for building web applications.', 2),
-('Image Optimizer', 'A JavaScript utility for editing and optimizing images.', 4),
-('Task Scheduler', 'An application for automating task scheduling in JavaScript.', 5);
+('JS Package Manager', 'A tool to manage and install JavaScript packages efficiently.', 31),
+('Data Visualizer', 'A JavaScript library for creating dynamic and interactive data visualizations.', 33),
+('Web Framework', 'A lightweight JavaScript framework for building web applications.', 32),
+('Image Optimizer', 'A JavaScript utility for editing and optimizing images.', 34),
+('Task Scheduler', 'An application for automating task scheduling in JavaScript.', 35);
 
 -- Insert random data into the versions table
 INSERT INTO versions (version_number, release_date, package_id)
 VALUES
-('1.0.0', '2023-01-15', 1),
-('1.1.0', '2023-03-10', 1),
-('0.9.0', '2023-02-20', 2),
-('1.0.0', '2023-04-05', 2),
-('2.0.0', '2023-06-18', 3),
-('1.0.0', '2023-05-01', 4),
-('1.0.0', '2023-07-12', 5),
-('1.1.0', '2023-09-20', 5),
-('2.0.0', '2023-11-01', 5);
+('1.0.0', '2023-01-15', 33),
+('1.1.0', '2023-03-10', 33),
+('0.9.0', '2023-02-20', 34),
+('1.0.0', '2023-04-05', 34),
+('2.0.0', '2023-06-18', 35),
+('1.0.0', '2023-05-01', 36),
+('1.0.0', '2023-07-12', 37),
+('1.1.0', '2023-09-20', 37),
+('2.0.0', '2023-11-01', 37);
 
 ALTER TABLE `packages`
 ADD CONSTRAINT `packages_ibfk_1` FOREIGN KEY (`auteurs_id`) REFERENCES `auteurs`(`id`) ON DELETE CASCADE;
