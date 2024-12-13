@@ -55,7 +55,7 @@ require_once './../../database/config.php';
             if ($stmt->execute()) {
                 echo " the package and related versions, have been deleted successfully.";
             } else {
-                echo "Failed to delete version: " . $conn->error;
+                echo "Failed to delete package: " . $conn->error;
             }
             
             $stmt->close();
@@ -107,7 +107,7 @@ require_once './../../database/config.php';
 
     </div>
     <div class="flex justify-end pt-4 border-t border-gray-200">
-        <a href="./../../admin-dashboard.php">
+    <a href="./../../dashboards/admin-dashboard.php">
         <button
         class="py-2 px-4 text-xs bg-orange-500 text-white rounded-full cursor-pointer font-semibold text-center shadow-sm transition-all duration-300 hover:bg-orange-700"
         onclick="document.getElementById('success-modal').remove();"

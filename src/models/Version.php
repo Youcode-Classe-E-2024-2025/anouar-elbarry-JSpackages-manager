@@ -1,6 +1,5 @@
 <?php
-require_once 'database/config.php';
-
+require_once './../database/config.php';
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     header('Location: index.php');
     exit;
