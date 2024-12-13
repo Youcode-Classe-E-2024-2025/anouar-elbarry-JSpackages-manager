@@ -14,7 +14,7 @@ require_once 'process-login.php';
 <div class="container mx-auto h-full " >
         <!-- Welcome Section -->
         <div class="text-center py-8 bg-gray-100">
-          <h1 class="text-4xl font-bold text-black">Welcome to the <span class="text-orange-600">Pack Man</span>   System</h1>
+          <h1 class="text-4xl font-bold text-black">Welcome to <span class="text-orange-600">Pack Man</span>  System</h1>
           <p class="mt-2 text-lg text-gray-600">Please select your role.</p>
         </div>
 
@@ -37,7 +37,7 @@ require_once 'process-login.php';
           </a>
         </div>
       </div>
-      <section id="modal" style="background-image: url('src/imges/signIn.jpg'); background-position:center; background-size: cover;" class=" hidden left-0 top-0 h-screen w-full">
+      <section id="modal" style="background-image: url('src/imges/cool-background.png'); background-position:center; background-size: cover;" class=" hidden left-0 top-0 h-screen w-full">
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
       <a href="#" class="flex items-center mb-6 text-4xl font-bold text-gray-900 dark:text-white">
           Access to your Dashboard    
