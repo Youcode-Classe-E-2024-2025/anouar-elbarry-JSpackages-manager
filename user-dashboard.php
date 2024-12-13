@@ -82,15 +82,15 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'user') {
     <!-- Navigation Cards -->
     <div class="grid grid-cols-1 gap-14  px-4 py-10 h-full">
           <a href="#" id="authors" class="card p-6 text-center bg-white rounded shadow hover:shadow-lg self-center min-h-fit">
-            <h2 class="text-2xl font-semibold text-blue-600">Authors</h2>
+            <h2 class="text-2xl font-semibold text-orange-600">Authors</h2>
             <p class="mb-3 text-gray-500 dark:text-gray-400">Explore Authors</p>
           </a>
           <a href="#" id="packages" class="card p-6 text-center bg-white rounded shadow hover:shadow-lg self-center min-h-fit">
-            <h2 class="text-2xl font-semibold text-blue-600">Packages</h2>
+            <h2 class="text-2xl font-semibold text-orange-600">Packages</h2>
             <p class="mb-3 text-gray-500 dark:text-gray-400">Explore all packages</p>
           </a>
           <a href="#" id="versions" class="card p-6 text-center bg-white rounded shadow hover:shadow-lg self-center min-h-fit">
-            <h2 class="text-2xl font-semibold text-blue-600">Versions</h2>
+            <h2 class="text-2xl font-semibold text-orange-600">Versions</h2>
             <p class="mb-3 text-gray-500 dark:text-gray-400">Track  Versions</p>
           </a>
         </div>
